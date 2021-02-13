@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+                    <!--== Main Menu Start ==-->
+                    <div class="col-lg-8 d-none d-xl-block">
+                        <nav class="mainmenu alignright">
+                            <ul>
+                                <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{% url 'carlist' %}">Cars</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!--== Main Menu End ==-->
+                </div>
+            </div>
+        </div>
+        <!--== Header Bottom End ==-->
+    </header>
+    <!--== Header Area End ==-->
+
+    <!--== SlideshowBg Area Start ==-->
+    <section id="slideslow-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="slideshowcontent">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <h1>BOOK A CAR TODAY!</h1>
+                                <p>FOR AS LOW AS $10 A DAY PLUS 15% DISCOUNT <br> FOR OUR RETURNING CUSTOMERS</p>
+
+                                <div  class="book-ur-car">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <div class="pick-location bookinput-item">
+                                            <select name="location" class="custom-select">
+                                              <option selected>Pick Location</option>
+                                              {% for city in car_city %}
+                                                <option value="{{city.city}}">{{city.city}}</option>
+                                              {% endfor %}
+                                            </select>
+                                        </div>
+
+                                       
+
+                                        <div class="car-choose bookinput-item">
+                                            <select name="seat" class="custom-select">
+                                              <option selected>Seats</option>
+                                              <option value="4">4</option>
+                                              <option value="7">7</option>
+                                              <option value="8">8</option>
+                                            </select>
+                                        </div>
+
+                                        <div  class="bookcar-btn bookinput-item">
+                                            <button type="submit">search car</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== SlideshowBg Area End ==-->
+
+    
+
+    <!--== Mobile App Area Start ==-->
+    <div id="mobileapp-video-bg"></div>
+    <section id="mobile-app-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="mobile-app-content">
+                        <h2>Hey!<br>You want to give your car on rent</h2>
+                        <p>So Just Press The Key Of Your Money</p>
+                        <div class="app-btns">
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'carrent' %}"><i class="fa fa-car"></i> Click Me</a>
+                            {% else %}
+                            <a href="{% url 'login' %}"><i class="fa fa-car"></i> Click Me</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--== Mobile App Area End ==-->
+{% endblock %}

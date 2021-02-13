@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+                    <!--== Main Menu Start ==-->
+            <div class="col-lg-8 d-none d-xl-block">
+                <nav class="mainmenu alignright">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'carlist' %}">Cars</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--== Main Menu End ==-->
+                </div>
+            </div>
+        </div>
+        <!--== Header Bottom End ==-->
+    </header>
+    <!--== Header Area End ==-->
+
+    <!--- profile page start here-->
+    <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+
+<div style="padding-top: 120px;" class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="osahan-account-page-left shadow-sm bg-white h-100">
+                <div class="border-bottom p-4">
+                    <div class="osahan-user text-center">
+                        <div class="osahan-user-media">
+                            <img class="mb-3 rounded-pill shadow-sm mt-1" src="https://bootdey.com/img/Content/avatar/avatar1.png" >
+                            <div class="osahan-user-media-body">
+                                <h6 class="mb-2">{{ user.first_name }} {{ user.last_name }}</h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav nav-tabs flex-column border-0 pt-4 pl-4 pb-4" id="myTab" role="tablist">
+                    <li style="margin-left:25%;" class="nav-item">
+                        <a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="osahan-account-page-right shadow-sm bg-white p-4 h-100">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane  fade  active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                        <h4 class="font-weight-bold mt-0 mb-4">Past Booking</h4>
+                        <div class="bg-white card mb-4 order-list shadow-sm">
+                            <div class="gold-members p-4">
+                                
+                                <div class="media">
+                                    
+                                        <img class="mr-4" src="https://bootdey.com/img/Content/avatar/avatar2.png" >
+                                
+                                    <div class="media-body">
+                                       
+                                            <span class="float-right text-info">Delivered on Mon, Nov 12, 7:18 PM <i class="icofont-check-circled text-success"></i></span>
+                                    
+                                          
+                                        <h6 class="mb-2">
+                                            <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold">car </span> 1
+                                           
+                                        </h6>
+
+                                       
+                                        <hr>
+                                       
+                                        <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Total Paid:</span> $300
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="bg-white card mb-4 order-list shadow-sm">
+                            <div class="gold-members p-4">
+                                
+                                <div class="media">
+                                    
+                                        <img class="mr-4" src="https://bootdey.com/img/Content/avatar/avatar2.png" >
+                                
+                                    <div class="media-body">
+                                       
+                                            <span class="float-right text-info">Delivered on Mon, Nov 12, 7:18 PM <i class="icofont-check-circled text-success"></i></span>
+                                    
+                                          
+                                        <h6 class="mb-2">
+                                            <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold">car </span> 1
+                                           
+                                        </h6>
+                                    
+                                        <hr>
+                                    
+                                        <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Total Paid:</span> $300
+                                        </p>
+                                    </div>
+                                </div> 
+
+                            </div>
+                        </div>
+                        <div class="bg-white card  order-list shadow-sm">
+                            <div class="gold-members p-4">
+                                
+                                <div class="media">
+                                    
+                                        <img class="mr-4" src="https://bootdey.com/img/Content/avatar/avatar2.png" >
+                                
+                                    <div class="media-body">
+                                       
+                                            <span class="float-right text-info">Delivered on Mon, Nov 12, 7:18 PM <i class="icofont-check-circled text-success"></i></span>
+                                    
+                                          
+                                        <h6 class="mb-2">
+                                            <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold">car </span> 1
+                                           
+                                        </h6>
+
+                                       
+                                        <hr>
+                                       
+                                        <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Total Paid:</span> $300
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- profile page end here-->
+{% endblock %}

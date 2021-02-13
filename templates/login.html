@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <!--== Main Menu Start ==-->
+            <div class="col-lg-8 d-none d-xl-block">
+                <nav class="mainmenu alignright">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'carlist' %}">Cars</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--== Main Menu End ==-->
+        </div>
+    </div>
+</div>
+<!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
+
+<!--== Login Page Content Start ==-->
+<section id="lgoin-page-wrap" class="section-padding">
+    <div style="padding-top: 50px;" class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-8 m-auto">
+                <div class="login-page-content">
+                    <div class="login-form">
+                        <h3>Login</h3>
+                        <form method="POST"> {% csrf_token %}
+                            <div class="username">
+                                <input type="text" name="email_id" required placeholder="Email">
+                            </div>
+                            <div class="password">
+                                <input type="password" name="password" required placeholder="Password">
+                            </div>
+                            <div class="log-btn">
+                                <button type="submit"><i class="fa fa-sign-in"></i> Log In</button>
+                            </div>
+                        </form>
+                        <div>
+                            {% for message in messages %}
+                            <p style="color:red;">{{ message }}</p>
+                                {% endfor %}
+                            </div>
+                		</div>
+                		
+                		<div class=" create-ac">
+                            <p>Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+                        </div>
+                        <div class="login-menu">
+                            <a href="{% url 'about' %}">About</a>
+                            <span>|</span>
+                            <a href="{% url 'contact' %}">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!--== Login Page Content End ==-->
+{% endblock %}

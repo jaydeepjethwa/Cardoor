@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <!--== Main Menu Start ==-->
+            <div class="col-lg-8 d-none d-xl-block">
+                <nav class="mainmenu alignright">
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li class="active"><a href="{% url 'carlist' %}">Cars</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--== Main Menu End ==-->
+        </div>
+    </div>
+</div>
+<!--== Header Bottom End ==-->
+</header>
+<!--== Header Area End ==-->
+
+<!--== Page Title Area Start ==-->
+<section id="page-title-area" class="section-padding overlay">
+    <div class="container">
+        <div class="row">
+            <!-- Page Title Start -->
+            <div class="col-lg-12">
+                <div class="section-title  text-center">
+                    <h2>Cars</h2>
+                    <span class="title-line"><i class="fa fa-car"></i></span>
+                    <p>Available Cars at the moment</p>
+                </div>
+            </div>
+            <!-- Page Title End -->
+        </div>
+    </div>
+</section>
+<!--== Page Title Area End ==-->
+
+<!--== Car List Area Start ==-->
+<section id="car-list-area" class="section-padding">
+    <div class="container">
+        <div class="row">
+
+            {% for item in car %}
+            <!-- Car List Content Start -->
+            <div class="col-lg-8">
+                <div class="car-list-content">
+                    <!-- Single Car Start -->
+                    <div class="single-car-wrap">
+                        <div class="row">
+                            <!-- Single Car Thumbnail -->
+                            <div class="col-lg-5">
+                                <div class="car-list-thumb"><img src="{{item.image}}" alt="" style="padding: 50px 2px;"></div>
+                            </div>
+                            <!-- Single Car Thumbnail -->
+
+                            <!-- Single Car Info -->
+                            <div class="col-lg-7">
+                                <div class="display-table">
+                                    <div class="display-table-cell">
+                                        <div class="car-list-info">
+                                            <h2><a href="/cardetail/{{item.id}}">{{item.carModel}}</a></h2>
+                                            <h5>Rent : {{item.rate}} /per a day</h5>
+                                            <h5>seats : {{item.seat}}</h5>
+                                            <!-- <p>{{item.description}}.</p> -->
+                                            <p class="rating">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star unmark"></i>
+                                            </p>
+                                            <a href="#" class="rent-btn">Book It</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Car info -->
+                        </div>
+                    </div>
+                    <!-- Single Car End -->
+                </div>
+
+            </div>
+            <!-- Car List Content End -->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!--== Car List Area End ==-->
+
+
+{% endblock %}
