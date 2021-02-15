@@ -2,6 +2,8 @@
 
 A Web-App used to give and take cars on rent. The frontend is developed using HTML, CSS and Java script and the backend is developed using Django Framework and SQLite as Database.
 
+Visit the website on : cardoor.pythonanywhere.com
+
 ## To run this in your local machine (recommended to create a virtual environment):
 1. Install Django
 2. Install Pillow
